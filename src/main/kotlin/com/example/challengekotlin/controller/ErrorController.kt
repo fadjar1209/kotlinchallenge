@@ -8,7 +8,9 @@ import com.example.challengekotlin.error.NotFoundException
 import com.example.challengekotlin.error.UnauthorizedException
 import com.example.challengekotlin.model.WebResponse
 import javax.validation.ConstraintViolationException
+import org.springframework.web.bind.annotation.CrossOrigin as CrossOrigin1
 
+@CrossOrigin1(origins = ["*"], allowedHeaders = ["*"])
 @RestControllerAdvice
 class ErrorController {
 

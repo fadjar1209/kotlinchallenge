@@ -3,15 +3,19 @@ package com.example.challengekotlin.controller
 import org.springframework.web.bind.annotation.*
 import com.example.challengekotlin.model.*
 import com.example.challengekotlin.service.ProductService
-
+import org.springframework.web.bind.annotation.CrossOrigin as CrossOrigin1
+//
+@CrossOrigin1(origins = ["*"], allowedHeaders = ["*"])
 @RestController
 class ProductController(val productService: ProductService) {
 
+//    @CrossOrigin(origins = "http://localhost:63342" )
     @PostMapping(
             value = ["/api/products"],
             produces = ["application/json"],
             consumes = ["application/json"]
     )
+    @CrossOrigin1( origins = ["http://localhost:63342"])
     fun createProduct(@RequestBody body: CreateProductRequest): WebResponse<ProductResponse> {
         val productResponse = productService.create(body)
         return WebResponse(
