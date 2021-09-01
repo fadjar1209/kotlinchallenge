@@ -150,3 +150,7 @@ Response :
     "status" : "string"
 }
 ```
+
+# Database
+
+file database yang sudah terisi `challengekotlin.sql`
